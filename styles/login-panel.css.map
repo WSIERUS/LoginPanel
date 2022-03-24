@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,MAAM,EAAE,gBAAgB;CAAG",
     "sources": [
         "../login-panel.sass"
     ],

@@ -1,1 +1,4 @@
-/* No CSS *//*# sourceMappingURL=login-panel.css.map */
+.main-login-panel {
+  height: calc(100% - 5cm);
+}
+/*# sourceMappingURL=login-panel.css.map */
