@@ -1,0 +1,99 @@
+const data = {
+  title: "Witaj w Programie",
+  description: "Zaloguj się, aby sprawdzić swoje cele i wynagrodzenia"
+}
+
+const panel = document.querySelector('.login-panel-inputs')
+
+let _inputData = {
+  _login: '',
+  _password: ''
+}
+
+/////////////// Funkcje
+
+const handleLoginInputChange = (event) => {
+  _login = event.target.value
+}
+
+const handlePasswordInputChange = (event) => {
+  _password = event.target.value
+}
+
+const handleLogIn = () => {
+  alert('udało się zalogować')
+}
+
+const handleLogInButtonMove = (isMoved) => {
+  if(isMoved === true) {
+    logInButton.className = "login-panel-button-alt"
+  }
+  else if (isMoved === false) {
+    logInButton.className = "login-panel-button-main"
+  }
+}
+
+const handleSignIn = () => {
+  alert('udało się zarejestrować')
+}
+
+const handleSignInButtonMove = (isMoved) => {
+  if(isMoved === false) {
+    signInButton.className = "login-panel-button-alt"
+  }
+  else if (isMoved === true) {
+    signInButton.className = "login-panel-button-main"
+  }
+}
+//////////////// Tytuł i opis
+
+const title = document.createElement('span')
+title.textContent = data.title
+title.className = 'login-panel-title'
+panel.appendChild(title)
+
+const description = document.createElement('span')
+description.textContent = data.description
+description.className = 'login-panel-description'
+panel.appendChild(description)
+
+///////////////////// Inputs
+
+const loginInput = document.createElement('input')
+loginInput.addEventListener('input', handleLoginInputChange)
+loginInput.className = 'login-panel-input'
+loginInput.setAttribute('placeholder', 'Login')
+panel.appendChild(loginInput)
+
+const passwordInput = document.createElement('input')
+passwordInput.addEventListener('input', handlePasswordInputChange)
+passwordInput.className = 'login-panel-input'
+passwordInput.setAttribute('type', 'password')
+passwordInput.setAttribute('placeholder', 'Hasło')
+panel.appendChild(passwordInput)
+
+///////////////////// Buttons
+
+const buttonSection = document.createElement('section')
+buttonSection.className = 'button-section'
+
+const logInButton = document.createElement('button')
+logInButton.textContent = 'Zaloguj'
+logInButton.className = 'login-panel-button-main'
+logInButton.addEventListener('click', handleLogIn)
+logInButton.addEventListener('mouseenter', () => handleLogInButtonMove(true))
+logInButton.addEventListener('mouseleave', () => handleLogInButtonMove(false))
+
+const signInButton = document.createElement('button')
+signInButton.textContent = 'Zarejestruj'
+signInButton.className = 'login-panel-button-alt'
+signInButton.addEventListener('click', handleSignIn)
+signInButton.addEventListener('mouseenter', () => handleSignInButtonMove(true))
+signInButton.addEventListener('mouseleave', () => handleSignInButtonMove(false))
+
+buttonSection.appendChild(logInButton)
+buttonSection.appendChild(signInButton)
+
+panel.appendChild(buttonSection)
+
+///////////////////////////////////

@@ -1,6 +1,6 @@
 const ImageSectionItems = [
-  {svg:'./icons/ico2.svg', boldName:'Realizuj swoje cele', otherName:'i zgarniaj korzyści'},
-  {svg:'./icons/ico1.svg', boldName:'Śledź swoje wydatki', otherName:''},
+  {svg:'./icons/ico1.svg', boldName:'Realizuj swoje cele', otherName:'i zgarniaj korzyści'},
+  {svg:'./icons/ico2.svg', boldName:'Śledź swoje wydatki', otherName:''},
 ]
 
 const renderSide = document.querySelector('.main-sections-on-image')
@@ -10,9 +10,9 @@ ImageSectionItems.map(item => {
   const section = document.createElement('span')
   section.className = 'main-section-element'
 
-  const elementSVG = document.createElement('svg')
-
+  const elementSVG = document.createElement('img')
   elementSVG.setAttribute('src', item.svg)
+  elementSVG.className = 'main-section-element-icon'
 
   const element = document.createElement('span')
 
@@ -34,4 +34,4 @@ ImageSectionItems.map(item => {
 
   renderSide.appendChild(section)
 
-}) // Dodać SVG do renderowania
+})
