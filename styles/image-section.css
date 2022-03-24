@@ -29,4 +29,32 @@
           align-items: center;
   position: absolute;
 }
+
+.main-section-element {
+  margin: 0.6cm 0 0.6cm 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 0.45cm;
+  letter-spacing: 1.5px;
+}
+
+.main-section-element-name {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-section-element-bold-name {
+  font-weight: bold;
+}
 /*# sourceMappingURL=image-section.css.map */

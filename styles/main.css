@@ -23,14 +23,6 @@ body {
           align-items: center;
 }
 
-.header-logo {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5cm;
-  font-weight: bold;
-  font-style: italic;
-  color: #000d80;
-}
-
 .main {
   margin: 0;
   height: calc( 100vh - 3cm);
