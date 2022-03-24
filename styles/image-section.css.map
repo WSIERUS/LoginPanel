@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../image-section.sass"
+    ],
+    "names": [],
+    "file": "image-section.css"
+}
