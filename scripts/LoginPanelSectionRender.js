@@ -30,16 +30,6 @@ const handlePasswordInputChange = (event) => {
   _inputData._password = event.target.value
 }
 
-const handleLogIn = () => {
-  accountsData.find(account => {
-    if(account.login === _inputData._login){
-      alert('Gratulacje udało się zalogować')
-    }
-    else alert('Ups! Coś poszło nie tak.')
-  }
-  )
-}
-
 const handleLogInButtonMove = (isMoved) => {
   if(isMoved === true) {
     logInButton.className = "login-panel-button-alt"
@@ -81,17 +71,34 @@ const handleSignIn = () => {
     isGoodLength = true
   }
 
-  if(isBigLetter && isGoodLength && isNumber) {
-    accountsData.push({
-      login: _inputData._login,
-      password: _inputData._password
-    })
-    alert('Gratulacje zostałeś zarejestrowany!')
+  function checkResult() {
+    if(isBigLetter && isGoodLength && isNumber) {
+      accountsData.push({
+        login: _inputData._login,
+        password: _inputData._password
+      })
+      alert('Gratulacje zostałeś zarejestrowany!')
+    } else {
+      alert('Błędne dane do rejestracji!')
+    }
   }
 
-  else {alert('Niepoprawne dane do rejestracji')}
+checkResult()
 
 }
+
+const handleLogIn = () => {
+
+  let index = accountsData.findIndex(account => account.login === _inputData._login)
+
+  if(accountsData[index].login === _inputData._login && accountsData[index].password === _inputData._password){
+    return alert('Gratulację zostałeś zalogowany')
+  }
+  else {
+    alert('Niepoprawne dane logowania!')
+  }
+}
+
 
 const handleSignInButtonMove = (isMoved) => {
   if(isMoved === false) {
