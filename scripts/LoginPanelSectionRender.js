@@ -10,18 +10,34 @@ let _inputData = {
   _password: ''
 }
 
+let accountsData = [
+  {login:'admin', password:'admin'}
+]
+
+let numbers = []
+
+for(let i=0; i < 10; i++) {
+  numbers.push(i.toString())
+}
+
 /////////////// Funkcje
 
 const handleLoginInputChange = (event) => {
-  _login = event.target.value
+  _inputData._login = event.target.value
 }
 
 const handlePasswordInputChange = (event) => {
-  _password = event.target.value
+  _inputData._password = event.target.value
 }
 
 const handleLogIn = () => {
-  alert('udało się zalogować')
+  accountsData.find(account => {
+    if(account.login === _inputData._login){
+      alert('Gratulacje udało się zalogować')
+    }
+    else alert('Ups! Coś poszło nie tak.')
+  }
+  )
 }
 
 const handleLogInButtonMove = (isMoved) => {
@@ -34,7 +50,47 @@ const handleLogInButtonMove = (isMoved) => {
 }
 
 const handleSignIn = () => {
-  alert('udało się zarejestrować')
+
+  const {_password} = _inputData
+  let passwordModify = _password
+
+  let isBigLetter = false
+
+  let isNumber = false
+
+  let isGoodLength = false
+
+  for(let i = 0; i < passwordModify.length; i++) {
+    
+    numbers.forEach(number => {
+      if(number.toString() === passwordModify[i]) {
+
+        isNumber = true
+      }
+      else null
+    })
+  }
+
+  for(let i = 0; i < passwordModify.length; i++) {
+
+    if('9' < passwordModify[i] && 'Z' >= passwordModify[i] && 'A' <= passwordModify[i]) {isBigLetter = true}
+    
+  }
+  
+  if(_password.length > 8) {
+    isGoodLength = true
+  }
+
+  if(isBigLetter && isGoodLength && isNumber) {
+    accountsData.push({
+      login: _inputData._login,
+      password: _inputData._password
+    })
+    alert('Gratulacje zostałeś zarejestrowany!')
+  }
+
+  else {alert('Niepoprawne dane do rejestracji')}
+
 }
 
 const handleSignInButtonMove = (isMoved) => {

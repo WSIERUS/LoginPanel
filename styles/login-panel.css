@@ -6,6 +6,16 @@
   cursor: pointer;
 }
 
+.login-panel-input, .login-panel-input-erorr {
+  height: 0.75cm;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+  background-color: #e9e9e9;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .main-login-panel {
   height: calc(100% - 5cm);
   display: -webkit-box;
@@ -47,13 +57,11 @@
 }
 
 .login-panel-input {
-  height: 0.75cm;
-  margin: 10px 0 10px 0;
-  padding: 10px;
-  outline: none;
   border: 1px solid white;
-  background-color: #e9e9e9;
-  font-family: 'Open Sans', sans-serif;
+}
+
+.login-panel-input-erorr {
+  border: 1px solid red;
 }
 
 .button-section {
