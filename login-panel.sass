@@ -59,11 +59,15 @@ $Font-Color: #4b4b4b
   @extend %Default-Button
   color: $Alt-Color
   background-color: $Main-Color
+  transition-property: color
+  transition-duration: 0.5s
 
 .login-panel-button-alt
   @extend %Default-Button
   color: $Main-Color
   background-color: $Alt-Color
+  transition-property: color background-color
+  transition-duration: 0.5s
 
 @media (max-width: 30cm)
   .main-login-panel
