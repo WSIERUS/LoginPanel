@@ -91,10 +91,14 @@ const handleLogIn = () => {
 
   let index = accountsData.findIndex(account => account.login === _inputData._login)
 
+  console.log(index)
+
+  if(index === -1) return alert('Niepoprawne dane logowania')
   if(accountsData[index].login === _inputData._login && accountsData[index].password === _inputData._password){
     return alert('Gratulację zostałeś zalogowany')
   }
   else {
+    console.log('dziala')
     alert('Niepoprawne dane logowania!')
   }
 }
