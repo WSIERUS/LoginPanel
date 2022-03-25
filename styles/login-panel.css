@@ -88,4 +88,13 @@
   color: #1e008a;
   background-color: #ffffff;
 }
+
+@media (max-width: 30cm) {
+  .main-login-panel {
+    margin: 1.5cm 0 1.5cm 0;
+  }
+  .login-panel-inputs {
+    width: 90vw;
+  }
+}
 /*# sourceMappingURL=login-panel.css.map */

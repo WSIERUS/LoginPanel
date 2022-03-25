@@ -64,4 +64,28 @@
 .main-section-element-bold-name {
   font-weight: bold;
 }
+
+@media (max-width: 30cm) {
+  .main-section-image {
+    height: 100vh;
+    background-size: 100% auto;
+    background-position-y: center;
+    position: relative;
+  }
+  .main-sections-on-image {
+    height: 100%;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-section-image {
+    height: 100vw;
+  }
+  .main-section-element {
+    font-size: 4vw;
+  }
+  .main-section-element-icon {
+    width: 8vw;
+  }
+}
 /*# sourceMappingURL=image-section.css.map */
