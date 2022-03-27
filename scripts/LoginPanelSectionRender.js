@@ -23,10 +23,12 @@ for(let i=0; i < 10; i++) {
 /////////////// Funkcje
 
 const handleLoginInputChange = (event) => {
+  loginInput.className = 'login-panel-input'
   _inputData._login = event.target.value
 }
 
 const handlePasswordInputChange = (event) => {
+  passwordInput.className = 'login-panel-input'
   _inputData._password = event.target.value
 }
 
@@ -37,6 +39,11 @@ const handleLogInButtonMove = (isMoved) => {
   else if (isMoved === false) {
     logInButton.className = "login-panel-button-main"
   }
+}
+
+const loginFail = (login, password) => {
+  if(!login) loginInput.className = 'login-panel-input-error'
+  if(!password) passwordInput.className = 'login-panel-input-error'
 }
 
 const handleSignIn = () => {
@@ -72,14 +79,14 @@ const handleSignIn = () => {
   }
 
   function checkResult() {
-    if(isBigLetter && isGoodLength && isNumber) {
+    if(isBigLetter && isGoodLength && isNumber && _inputData._login.length > 5) {
       accountsData.push({
         login: _inputData._login,
         password: _inputData._password
       })
       alert('Gratulacje zostałeś zarejestrowany!')
     } else {
-      alert('Błędne dane do rejestracji!')
+      loginFail(_inputData._login.length >= 5, (isBigLetter || isNumber || isGoodLength))
     }
   }
 
@@ -91,15 +98,12 @@ const handleLogIn = () => {
 
   let index = accountsData.findIndex(account => account.login === _inputData._login)
 
-  console.log(index)
-
-  if(index === -1) return alert('Niepoprawne dane logowania')
-  if(accountsData[index].login === _inputData._login && accountsData[index].password === _inputData._password){
-    return alert('Gratulację zostałeś zalogowany')
+  if(index === -1) {
+    loginFail(false, false)
+    alert('Dane logowania niepoprawne!')
   }
-  else {
-    console.log('dziala')
-    alert('Niepoprawne dane logowania!')
+  else if(accountsData[index].login === _inputData._login && accountsData[index].password === _inputData._password){
+    return alert('Gratulację zostałeś zalogowany')
   }
 }
 
