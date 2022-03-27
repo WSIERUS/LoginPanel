@@ -79,7 +79,7 @@ const handleSignIn = () => {
   }
 
   function checkResult() {
-    if(isBigLetter && isGoodLength && isNumber && _inputData._login.length > 5) {
+    if(isBigLetter && isGoodLength && isNumber && _inputData._login.length > 0) {
       accountsData.push({
         login: _inputData._login,
         password: _inputData._password
@@ -87,9 +87,10 @@ const handleSignIn = () => {
       alert('Gratulacje zostałeś zarejestrowany!')
     } else {
       loginFail(_inputData._login.length >= 5, (isBigLetter || isNumber || isGoodLength))
+      alert('Hasło zawierać musi: \n- minimum 8 znaków, \n- jedną wielką literę oraz \n- jedną liczbę')
     }
   }
-
+  // Brak walidacji dla istniejących już kont - nie powinno można być założyć konta dwa razy dla tego samego loginu
 checkResult()
 
 }
