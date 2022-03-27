@@ -4,6 +4,7 @@ $Alt-Color: #ffffff
 $Font-Color: #4b4b4b
 
 %Default-Button
+  margin: 0.5cm 0 0 0
   width: 4cm
   height: 1cm
   border: 1px solid $Main-Color
@@ -49,7 +50,6 @@ $Font-Color: #4b4b4b
   border: 1px solid red
 
 .button-section
-  margin: 10px 0 10px 0
   width: 100%
   display: flex
   flex-direction: row
@@ -69,9 +69,28 @@ $Font-Color: #4b4b4b
   transition-property: color background-color
   transition-duration: 0.5s
 
-@media (max-width: 30cm)
+@media (max-width: 25cm)
+  %Default-Button
+    margin: 0.5cm 0.25cm 0 0.25cm
+    width: 100%
+
   .main-login-panel
     margin: 1.5cm 0 1.5cm 0
 
   .login-panel-inputs
     width: 90vw
+
+@media ( max-width: 15cm )
+  %Default-Button
+    margin: 0.5cm 0 0 0
+    width: 100%
+
+  .button-section
+    flex-direction: column
+
+@media ( max-width: 10cm )
+  .login-panel-title
+    font-size: 0.45cm
+
+  .login-panel-description
+    font-size: 0.33cm
