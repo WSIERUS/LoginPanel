@@ -87,7 +87,7 @@ const handleSignIn = () => {
       alert('Gratulacje zostałeś zarejestrowany!')
     } else {
       loginFail(_inputData._login.length >= 5, (isBigLetter || isNumber || isGoodLength))
-      alert('Hasło zawierać musi: \n- minimum 8 znaków, \n- jedną wielką literę oraz \n- jedną liczbę')
+      alert('Hasło zawierać musi: \n- minimum 8 znaków, \n- jedną wielką literę \n- jedną liczbę')
     }
   }
   // Brak walidacji dla istniejących już kont - nie powinno można być założyć konta dwa razy dla tego samego loginu
